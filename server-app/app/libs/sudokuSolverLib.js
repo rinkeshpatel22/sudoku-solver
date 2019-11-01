@@ -1,4 +1,4 @@
-let solveSudoku = function (sudoku) {
+let solveSudoku = (sudoku) => {
   return new Promise((resolve, reject) => {
     try {
       var emptyPositions = saveEmptyPositions(sudoku);
@@ -7,7 +7,7 @@ let solveSudoku = function (sudoku) {
       while (i < emptyPositions.length) {
         row = emptyPositions[i][0];
         column = emptyPositions[i][1];
-        value = sudoku[row][column] + 1;  // Try the next value
+        value = sudoku[row][column] + 1;  // Try the first value
         found = false;
 
         while (!found && value <= limit) {
@@ -17,11 +17,11 @@ let solveSudoku = function (sudoku) {
             sudoku[row][column] = value;
             i++;
           } else {
-            value++;
+            value++; // If value is not valid then increment the value by 1 and check until valid value not found. 
           }
         }
 
-        // If not found valid value, move back track to the previous position
+        // If all possible values (1 to 9) checked and not found valid value then move back track to the previous position
         if (found === false) {
           sudoku[row][column] = null;
           i--; // Back track
@@ -35,7 +35,7 @@ let solveSudoku = function (sudoku) {
 };
 
 // Keep empty positions in one array 
-let saveEmptyPositions = function (sudoku) {
+let saveEmptyPositions = (sudoku) => {
   let emptyPositions = [];
   sudoku.forEach((rows, rowIndex) => rows.forEach((element, columnIndex) => {
     if (element === null) {
@@ -46,8 +46,7 @@ let saveEmptyPositions = function (sudoku) {
 };
 
 // Check if the VALUE is already exists in current row, column or 3X3 square
-// if not then place this value at this COLUMN & ROW position and move ahead else check for next value
-let checkValue = function (sudoku, column, row, value) {
+let checkValue = (sudoku, column, row, value) => {
   let isColumnIncludesThisValue = sudoku.some(row => row[column] === value);
   let isRowIncludesThisValue = sudoku[row].includes(value);
   let is3X3SquareIncludesThisValue = check3x3Square(sudoku, column, row, value);
@@ -55,7 +54,7 @@ let checkValue = function (sudoku, column, row, value) {
 };
 
 // Check if the value is already exists in current 3X3 square or not
-let check3x3Square = function (sudoku, column, row, value) {
+let check3x3Square = (sudoku, column, row, value) => {
   let rowCorner = Math.floor(row / 3) * 3;
   let columnCorner = Math.floor(column / 3) * 3;
   let rows = [rowCorner, rowCorner + 1, rowCorner + 2];
