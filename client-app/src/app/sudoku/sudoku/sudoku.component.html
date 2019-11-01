@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="at-sudoku">
+        <div class="at-menu">
+            <div class="row">
+                <div class="col-6 col-md-3">
+                    <button class="btn btn-primary" (click)="checkSudoku()" ngbTooltip="Check your solution"
+                        placement="top">
+                        Check
+                    </button>
+                </div>
+                <div class="col-6 col-md-3">
+                    <button class="btn btn-primary" (click)="resetSudoku()" ngbTooltip="Reset entered values"
+                        placement="top">
+                        Reset
+                    </button>
+                </div>
+                <div class="col-6 col-md-3">
+                    <button class="btn btn-primary" (click)="solveSudoku()" ngbTooltip="Get solution of this Sudoku" placement="top">
+                        Solve
+                    </button>
+                </div>
+                <div class="col-6 col-md-3">
+                    <button class="btn btn-primary" (click)="getSudoku()" ngbTooltip="Load a new Sudoku" placement="top">
+                        New
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="at-board">
+            <form [formGroup]="sudokuFormGroup">
+                <div formArrayName="cells">
+                    <div class="at-row" *ngFor="let row of puzzle; let i = index">
+                        <span class="at-column" *ngFor="let field of row; let j = index">
+                            <input type="number" 
+                                    class="at-cell" 
+                                    [ngClass]="{'at-disabled': field != null, 'at-error': cells.controls[(i*row.length)+j].errors}" 
+                                    name="{{(i*row.length)+j}}" 
+                                    value="{{field}}"
+                                    formControlName="{{(i*row.length)+j}}" 
+                                    maxlength="1" 
+                                    (keypress)="onKeyPress($event)"
+                                    (paste)="$event.preventDefault()" 
+                                    tabindex="-1" />
+                        </span>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

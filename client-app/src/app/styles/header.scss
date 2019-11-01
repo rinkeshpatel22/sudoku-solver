@@ -1,0 +1,18 @@
+.at-app-header{
+    z-index: 2;
+    font-size: 20px;
+    background-color: $header-bg-color;
+    color: $header-font-color;
+    width: 100%;
+    letter-spacing: 2px;
+    box-shadow: $header-shadow;
+    height: 40px;
+    font-weight: 700;
+    line-height: 40px;
+    position: fixed;
+    .at-app-title{
+        padding-left: 40px;
+    }
+  }
+
+

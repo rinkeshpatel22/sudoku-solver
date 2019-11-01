@@ -1,0 +1,57 @@
+.at-sudoku{
+    position: relative;
+    top: 40px;
+    .at-menu{
+        width: 490px;
+        margin: auto;
+        .btn{
+            width: 100%;
+            margin: 20px 0px;
+            box-shadow: $box-shadow;
+        }
+    }
+    .at-board{
+        width: 490px;
+        margin: auto;
+        padding: 20px;
+        box-shadow: $box-shadow;
+    }
+    input[type=number]::-webkit-inner-spin-button, 
+    input[type=number]::-webkit-outer-spin-button { 
+        -webkit-appearance: none; 
+        margin: 0; 
+    }
+    .at-cell{
+        height: 50px;
+        width: 50px;
+        font-size: 20px;
+        text-align: center;
+        border: 1px solid $cell-border-color;
+    }
+    .at-column:nth-child(3n) .at-cell {
+            border-right-color:$cell-dark-border-color ;
+    }
+    .at-column:first-child .at-cell{
+            border-left-color:$cell-dark-border-color ;
+    }
+    .at-row:nth-child(3n) .at-cell {
+        border-bottom-color:$cell-dark-border-color ;
+    }
+    .at-row:first-child .at-cell{
+        border-top-color:$cell-dark-border-color ;
+    }
+    .at-disabled{
+        background-color: $cell-disabled-color;
+        pointer-events:none;
+        cursor: not-allowed;
+    }
+    .at-error{
+        color: $cell-error-color;
+        background-color: $cell-error-bg-color;
+        &.at-disabled{
+            color:inherit;
+            background-color: $cell-disabled-color;
+        }
+    }
+}
+

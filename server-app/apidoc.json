@@ -1,0 +1,7 @@
+{
+    "name" : "Sudoku Solver",
+    "version": "1.0.0",
+    "description": "Documentation for the Sudoku Solver server side application",
+    "title": "Sudoku Solver Server Side Apllication",
+    "url" : "http://localhost:3000"
+  }

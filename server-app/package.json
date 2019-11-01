@@ -1,0 +1,21 @@
+{
+  "name": "sudoku-solver-server-app",
+  "version": "1.0.0",
+  "description": "Sudoku-Solver Server silde application ",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "ng lint",
+    "eslint-report": "eslint app/** -f node_modules/eslint-detailed-reporter/lib/detailed.js -o report.html"
+  },
+  "author": "rinkeshpatel22",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.6.0",
+    "eslint-detailed-reporter": "^0.8.0"
+  }
+}
