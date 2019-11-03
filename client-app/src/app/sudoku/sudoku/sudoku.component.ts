@@ -31,7 +31,7 @@ export class SudokuComponent implements OnInit {
   }
 
   // GET SUDOKU
-  private getSudoku(): void {
+  public getSudoku(): void {
     this.sudokuService.getSudoku().subscribe(response => {
       if (response.data && response.data.length > 0) {
         if (this.cells && this.cells.length > 0) {
@@ -40,12 +40,11 @@ export class SudokuComponent implements OnInit {
           response.data.forEach(value => this.cells.push(this.formBuilder.control(value))); // create form controls for each cell
         }
         this.puzzle = this.get2DArray(response.data);
-        this.loaderService.stop();
         this.toastrService.success(MessageConstants.GET_SUCCESS);
       } else {
-        this.loaderService.stop();
         this.toastrService.error(MessageConstants.SUDOKU_NOTFOUND);
       }
+      this.loaderService.stop();
     }, () => {
       this.loaderService.stop();
       this.toastrService.error(MessageConstants.GET_FAILED);
@@ -59,12 +58,11 @@ export class SudokuComponent implements OnInit {
       if (response.data && response.data.length > 0) {
         const flatArray = response.data.reduce((acc, val) => acc.concat(val), []);
         this.sudokuFormGroup.get(AppConstants.CELLS).setValue(flatArray);
+        this.toastrService.success(MessageConstants.SOLVE_SUCCESS);
       } else {
-        this.loaderService.stop();
         this.toastrService.error(MessageConstants.SUDOKU_NOTFOUND);
       }
       this.loaderService.stop();
-      this.toastrService.success(MessageConstants.SOLVE_SUCCESS);
     }, () => {
       this.loaderService.stop();
       this.toastrService.error(MessageConstants.SOLVE_FAILED);
