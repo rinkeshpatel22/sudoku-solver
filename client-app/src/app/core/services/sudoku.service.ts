@@ -5,6 +5,7 @@ import { map } from 'rxjs/operators';
 import { AppConstants } from '../Constants/app-constants';
 import { SudokuResponse } from '../interfaces/sudoku-response';
 import { SudokuRequest } from '../interfaces/sudoku-request';
+import { solveSudokuResponse } from '../interfaces/solve-sudoku-response';
 
 @Injectable({
   providedIn: 'root'
@@ -23,12 +24,12 @@ export class SudokuService {
   }
 
   // Solve Sudoku
-  public solveSudoku(requestData): Observable<SudokuResponse> {
+  public solveSudoku(requestData): Observable<solveSudokuResponse> {
     const requestPayload: SudokuRequest = {
       sudoku: requestData
     };
     return this.httpClient.post(`${this.apiBaseUrl}${AppConstants.SOLVE_SUDOKU_ENDPOINT}`, requestPayload)
-      .pipe(map((response: SudokuResponse) => response));
+      .pipe(map((response: solveSudokuResponse) => response));
   }
 
   // Check Sudoku
