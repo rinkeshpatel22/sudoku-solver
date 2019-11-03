@@ -39,7 +39,7 @@ export class SudokuComponent implements OnInit {
         } else {
           response.data.forEach(value => this.cells.push(this.formBuilder.control(value))); // create form controls for each cell
         }
-        this.puzzle = this.get2DArray(response.data);
+        this.puzzle = this.get2DArray([...response.data]);
         this.toastrService.success(MessageConstants.GET_SUCCESS);
       } else {
         this.toastrService.error(MessageConstants.SUDOKU_NOTFOUND);
