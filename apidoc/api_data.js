@@ -9,7 +9,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n\"error\"  : false,\n\"status\" : \"200\",\n\"message\": \"Get Sudoku successfull\",\n\"data\"   :  '[6,null,null,1,5,7,null,null,null,3,null,null,2,null,4,null,9,null,null,1,null,null,null,6,null,4,null,2,6,null,null,1,null,8,null,3,5,null,null,null,null,null,9,2,4,null,null,3,9,null,null,null,null,5,1,3,null,6,null,2,null,null,null,9,4,6,8,3,1,7,null,null,7,null,null,null,4,9,null,1,null]'\n}",
+          "content": "{\n\"error\"  : false,\n\"status\" : \"200\",\n\"message\": \"Get Sudoku successfull\",\n\"data\"   : [6,null,null,1,5,7,null,null,null,3,null,null,2,null,4,null,9,null,null,1,null,null,null,6,null,4,null,2,6,null,null,1,null,8,null,3,5,null,null,null,null,null,9,2,4,null,null,3,9,null,null,null,null,5,1,3,null,6,null,2,null,null,null,9,4,6,8,3,1,7,null,null,7,null,null,null,4,9,null,1,null]\n}",
           "type": "json"
         }
       ]
@@ -53,7 +53,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{\n \"sudoku\": '[[6,7,2,8,9,4,5,3,1],[5,4,9,1,6,3,8,2,3],[8,3,1,5,2,7,6,4,9],[2,8,4,9,1,6,7,5,3],[3,9,6,4,7,5,2,1,8],[1,5,7,3,8,2,4,9,6],[4,1,5,7,3,8,9,6,2],[7,6,3,2,4,9,1,8,5],[9,2,8,6,5,1,3,7,4]]'\n}",
+          "content": "{\n \"sudoku\": [[6,7,2,8,9,4,5,3,1],[5,4,9,1,6,3,8,2,3],[8,3,1,5,2,7,6,4,9],[2,8,4,9,1,6,7,5,3],[3,9,6,4,7,5,2,1,8],[1,5,7,3,8,2,4,9,6],[4,1,5,7,3,8,9,6,2],[7,6,3,2,4,9,1,8,5],[9,2,8,6,5,1,3,7,4]]\n}",
           "type": "json"
         }
       ]
@@ -62,7 +62,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:- Invalid entires found:",
-          "content": "{   \n    \"error\":false,\n    \"status\":\"200\",\n    \"message\":\"Invalid entires found\",\n    \"data\":'[7,14,17,35]'\n}",
+          "content": "{   \n    \"error\":false,\n    \"status\":\"200\",\n    \"message\":\"Invalid entires found\",\n    \"data\": [7,14,17,35]\n}",
           "type": "json"
         },
         {
@@ -111,7 +111,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "{\n \"sudoku\": '[[null,null,null,null,9,null,5,null,1],[null,null,null,null,null,null,null,2,null],[8,3,null,null,2,null,null,null,null],[null,null,4,null,1,6,7,5,null],[3,null,null,null,7,5,null,1,8],[null,5,null,null,null,null,null,9,null],[4,1,null,null,null,null,9,null,2],[7,null,3,null,null,null,1,null,null],[null,2,null,6,5,null,null,null,4]]'\n }",
+          "content": "{\n \"sudoku\": [[null,null,null,null,9,null,5,null,1],[null,null,null,null,null,null,null,2,null],[8,3,null,null,2,null,null,null,null],[null,null,4,null,1,6,7,5,null],[3,null,null,null,7,5,null,1,8],[null,5,null,null,null,null,null,9,null],[4,1,null,null,null,null,9,null,2],[7,null,3,null,null,null,1,null,null],[null,2,null,6,5,null,null,null,4]]\n }",
           "type": "json"
         }
       ]
@@ -120,7 +120,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:- Solved:",
-          "content": "{\n\"error\"  : false,\n\"status\" : \"200\",\n\"message\": \"Sudoku solved successfully\",\n\"data\"   :  '[[6,7,2,8,9,4,5,3,1],[5,4,9,1,6,3,8,2,7],[8,3,1,5,2,7,6,4,9],[2,8,4,9,1,6,7,5,3],[3,9,6,4,7,5,2,1,8],[1,5,7,3,8,2,4,9,6],[4,1,5,7,3,8,9,6,2],[7,6,3,2,4,9,1,8,5],[9,2,8,6,5,1,3,7,4]]'\n}",
+          "content": "{\n\"error\"  : false,\n\"status\" : \"200\",\n\"message\": \"Sudoku solved successfully\",\n\"data\"   : [[6,7,2,8,9,4,5,3,1],[5,4,9,1,6,3,8,2,7],[8,3,1,5,2,7,6,4,9],[2,8,4,9,1,6,7,5,3],[3,9,6,4,7,5,2,1,8],[1,5,7,3,8,2,4,9,6],[4,1,5,7,3,8,9,6,2],[7,6,3,2,4,9,1,8,5],[9,2,8,6,5,1,3,7,4]]\n}",
           "type": "json"
         }
       ]
